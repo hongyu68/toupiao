@@ -1,0 +1,97 @@
+@import '../base/mixin.less';
+.head {
+	width: 100%;
+	height: 0.44rem;
+	line-height: 0.44rem;
+	white-space: nowrap;
+	overflow: hidden;
+	font-size: 0.24rem;
+	font-weight: bold;
+	background: #000;
+	&:before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		content:url(/images/yinyingright.png);
+		z-index: 1;
+	}
+	&:after {
+		position: absolute;
+		top: 0;
+		right: 0;
+		content:url(/images/yinyingleft.png);
+		z-index: 1;
+	}
+	marquee {
+		width: 100%;
+	}
+	a {
+	    color:#fff;
+	}
+}
+.values {
+	position: relative;
+	img {
+		display: block;
+		width: 100%;
+	}
+
+	.specialty {
+		width: 100%;
+		height: 3.82rem;
+		background-image: url(/images/bj.png);
+		background-repeat: no-repeat;
+		background-size: 7.5rem 3.82rem;
+		background-position: center;
+		text-align: center;
+		margin-top: 0.34rem;
+		.item {
+			display: flex;
+			width: 87%;
+			margin: 0 auto;
+			border-top: 1px solid #c58959;
+			.detail-item {
+				flex:1;
+				padding: 0 0.05rem;
+				h1 {
+					font-size:0.24rem;
+					line-height: 0.58rem;
+				}
+				.txt {
+					margin-top: -0.2rem;
+					font-size:0.2rem;
+					transform:scale(0.75)
+				}
+				color:#fff;
+			}
+
+		}
+		img {
+			display: block;
+			width:6.2rem;
+			height: 2.4rem;
+			margin-top: 1.3rem;
+			margin: 0 auto;
+		}
+	}
+	.btn_home {
+		position: fixed;
+		top:0.3rem;
+		right:0.15rem;
+		width: 1.23rem;
+		height: 1.22rem;
+	}
+	.btn_service {
+		position: fixed;
+		top:3.9rem;
+		right:0.26rem;
+		width: 1rem;
+		height: 1rem;
+	}
+}
+body {
+	background-color: #000;
+	padding-bottom: 1.5rem;
+
+}
+

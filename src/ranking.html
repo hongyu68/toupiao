@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name = "viewport" content = "width = device-width, initial-scale = 1.0,maximum-scale = 1.0,user-scalable = 0" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta http-equiv="Content-Type" content="text/html">
+	<meta name="layoutmode" content="fitscreen|standard" />
+	<title>投票排名页</title>
+	<link rel="stylesheet" href="/css/reset.css">
+	<link rel="stylesheet" href="/css/crunchies.css">
+</head>
+<body>
+	@@include('include/header.html')
+	<section class="main-content main-content_ranking">
+		<h1>投票排名</h1>
+		<table class="year-table table_active">
+				<tr>
+					<th width="23%">序号</th>
+					<th width="43%">品牌名称</th>
+					<th width="34%">票数</th>
+				</tr>
+				<tr>	
+					<td>1</td>
+					<td>东方雨虹东方</td>
+					<td>1111111</td>
+				</tr>
+				<tr>	
+					<td>2</td>
+					<td>东方雨虹东方雨虹</td>
+					<td>111111122222</td>
+				</tr>
+				<tr>	
+					<td>3</td>
+					<td>东方雨虹东方雨虹东方雨虹</td>
+					<td>1111111</td>
+				</tr>
+				<tr>	
+					<td>4</td>
+					<td>东方雨虹东方</td>
+					<td>1111111</td>
+				</tr>
+				<tr>	
+					<td>5</td>
+					<td>东方雨虹东方雨虹</td>
+					<td>111111122222</td>
+				</tr>
+				<tr>	
+					<td>6</td>
+					<td>东方雨虹东方雨虹东方雨虹</td>
+					<td>1111111</td>
+				</tr>
+		</table>
+	</section>
+	
+	<!-- 页脚 开始 -->
+	 @@include('include/footer.html')
+	<!-- 页脚 结束 -->
+	<script src="scripts/jquery-1.10.2.js" type="text/javascript"></script>
+	<script>
+
+		var Tab = function(id) {
+
+			this.id = id;
+
+		};
+
+		$.extend(Tab.prototype, {
+
+			init: function( ) {
+				this.bindEvent();
+			},
+			bindEvent: function() {
+				$('#'+ this.id).find('#nav').on('click', '.js-nav_year span',{tab:this},this.tab);
+			},
+			tab: function(event) {
+				var _this = event.data.tab;
+				var index = $(this).parent().index();
+				$('#'+ _this.id)
+					.find('#nav-content')
+						.find('table')
+							.eq(index).addClass('table_active')
+							.siblings().removeClass('table_active');
+			}
+
+		});
+
+		var Tab = new Tab('tab');
+		Tab.init();
+
+	</script>
+</body>
+</html>
